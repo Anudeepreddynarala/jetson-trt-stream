@@ -7,6 +7,20 @@ Real-time face recognition system using ArcFace with YOLO11 face detection.
 - Docker installed on your system
 - Webcam access
 
+## Building the Docker Image
+
+First, build the Docker image from the Dockerfile:
+
+```bash
+docker build -t arcface-recognition .
+```
+
+This creates an image based on **Python 3.10-slim** as the parent image, with all dependencies installed:
+- OpenCV for video processing
+- ONNX Runtime for ArcFace model inference
+- Ultralytics for YOLO11 face detection
+- Cryptography for secure embedding storage
+
 ## Running the Docker Container
 
 Run the container with webcam and display access:

@@ -1,0 +1,28 @@
+# OPTION 2: Debian slim with opencv-headless (no GUI, smaller)
+FROM python:3.10-slim
+
+# Install only minimal runtime libraries (no dev packages)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgomp1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Use opencv-python-headless instead of opencv-python (saves ~50MB)
+RUN pip install --no-cache-dir \
+    opencv-python-headless==4.10.0.84 \
+    onnxruntime==1.20.1 \
+    ultralytics==8.3.41 \
+    numpy==1.26.4 \
+    cryptography==44.0.0
+
+COPY *.py /app/
+COPY *.onnx /app/
+COPY *.pt /app/
+
+ENV PYTHONUNBUFFERED=1
+CMD ["/bin/bash"]

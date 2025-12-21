@@ -1,0 +1,26 @@
+# OPTION 1: Alpine-based (smallest possible ~400-500 MB)
+FROM python:3.10-alpine
+
+# Install build dependencies and runtime libraries
+RUN apk add --no-cache \
+    gcc g++ make cmake \
+    linux-headers \
+    libstdc++ \
+    openblas-dev \
+    libgomp \
+    ffmpeg-dev \
+    libx11-dev \
+    mesa-dev \
+    gtk+3.0-dev \
+    && pip install --no-cache-dir \
+    opencv-python-headless==4.10.0.84 \
+    onnxruntime==1.20.1 \
+    ultralytics==8.3.41 \
+    numpy==1.26.4 \
+    cryptography==44.0.0 \
+    && apk del gcc g++ make cmake linux-headers
+
+WORKDIR /app
+COPY . /app/
+ENV PYTHONUNBUFFERED=1
+CMD ["/bin/sh"]

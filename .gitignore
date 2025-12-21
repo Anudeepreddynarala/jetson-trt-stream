@@ -1,4 +1,18 @@
-.claude/
-secret.key
+# Sensitive files
 embeddings.json
-your
+secret.key
+
+# Claude files
+.claude/
+claude.md
+
+# Model files (too large for git)
+*.onnx
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
