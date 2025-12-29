@@ -1,18 +1,48 @@
-# Sensitive files
-embeddings.json
-secret.key
-
-# Claude files
-.claude/
-claude.md
-
-# Model files (too large for git)
+# TensorRT and Models
+*.trt
 *.onnx
 *.pt
+*.engine
+*.wts
 
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv
+venv/
+ENV/
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Logs
+logs/
+*.log
+
+# Old arcface files
+embeddings.json
+secret.key
+arcface.onnx
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Temporary
+/tmp/
+*.tmp

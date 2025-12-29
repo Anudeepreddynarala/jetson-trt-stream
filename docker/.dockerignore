@@ -1,0 +1,17 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+.venv
+venv/
+*.log
+logs/
+.DS_Store
+*.swp
+*.swo
+*~
+README.md
+.vscode
+.idea
+target/
+*.md

@@ -1,0 +1,23 @@
+camera:
+  device_id: 0
+  width: 1280
+  height: 720
+  fps: 30
+
+inference:
+  model_path: "models/yolov8n.trt"
+  input_size: 640
+  confidence_threshold: 0.5
+  nms_threshold: 0.4
+
+networking:
+  ipc_socket: "/tmp/yolo_rust.sock"
+  udp_target: "127.0.0.1:9999"
+  tcp_bind: "0.0.0.0:8888"
+  buffer_size: 1000
+
+metrics:
+  fps_window: 30
+  report_interval_sec: 1.0
+  enable_logging: true
+  log_directory: "logs/"
