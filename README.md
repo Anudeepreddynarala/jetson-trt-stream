@@ -1,3 +1,5 @@
+_README content drafted with assistance from Claude_
+
 # YOLO-Rust-TRT
 
 GPU-accelerated YOLO object detection with Rust networking on NVIDIA Jetson Orin Nano.
