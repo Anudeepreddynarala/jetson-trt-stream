@@ -1,6 +1,6 @@
 _README content drafted with assistance from Claude_
 
-# YOLO-Rust-TRT
+# Edge Vision System with Rust Networking Stack
 
 GPU-accelerated YOLO object detection with Rust networking on NVIDIA Jetson Orin Nano.
 
